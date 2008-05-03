@@ -26,6 +26,9 @@ var FluidTwitter = Class.create({
     // alter "What are you doing?" h3 to allow thin viewport
 		$$('.bar').first().down('h3').down('label').setStyle({padding: 0});
 	  
+	  // remove user photos
+    $$('td.thumb').invoke('remove');
+	  
 		$('header').down('img').setStyle({paddingLeft: '10px'});
 	},
 	
