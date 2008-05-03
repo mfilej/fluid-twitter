@@ -4,6 +4,16 @@ Fluid Twitter
 A Userscript for Fluid that streamlines the twitter interface to
 make it usable in a flexible (but mostly thin) Fluid instance
 
+Features
+--------
+
+New tweets are loaded every 30 seconds by refreshing the page.
+
+On top of recent tweets a link is added that marks all messages as read by
+fading them. When new tweets arrve the count is reflected on the badge of the dock icon.
+
+The mark all read link can be accessed with ctrl+a.
+
 
 Installation
 ===============
