@@ -47,12 +47,12 @@ var FluidTwitter = Class.create({
 
 	allRead: function() {
 		var history = $$('#timeline tr[id^=status]');
+
 		var last_read = $('status_'+window.location.href.split('#l').last());
+		if (!last_read) last_read = history.last();
+
 		var newest = history.first().id.sub(/status_/,'');
 		var unread = last_read.previousSiblings();
-
-		// when anchor not present
-		if (!last_read) last_read = history.last();
 	
 		last_read.nextSiblings().concat(last_read).invoke('markRead');
 		
