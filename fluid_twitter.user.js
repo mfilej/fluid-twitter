@@ -18,11 +18,12 @@ Element.addMethods({
 });
 
 var FluidTwitter = Class.create({
+	update_interval: 120000,
 	initialize: function() {
 		this.trimUI();
 		this.allRead();
 		
-		setTimeout(this.refreshTwitter.bind(this), 30000);
+		setTimeout(this.refreshTwitter.bind(this), this.update_interval);
 	},
 	
 	trimUI: function() {
@@ -92,11 +93,11 @@ var FluidTwitter = Class.create({
 	refreshTwitter: function() {
 	  // don't refresh if i'm scrolling
 		if($$('.wrapper').first().cumulativeScrollOffset()[1] > 90) 
-		  return setTimeout(this.refreshTwitter.bind(this), 30000);
+		  return setTimeout(this.refreshTwitter.bind(this), this.update_interval);
 		
 		// don't refresh if i'm typing either
 		if($F('status') != '')
-		  return setTimeout(this.refreshTwitter.bind(this), 30000);
+		  return setTimeout(this.refreshTwitter.bind(this), this.update_interval);
     
 		window.location.reload();
 	}
