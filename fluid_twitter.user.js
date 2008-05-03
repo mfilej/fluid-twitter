@@ -22,6 +22,7 @@ var FluidTwitter = Class.create({
 	initialize: function() {
 		this.trimUI();
 		this.allRead();
+		this.dockMenuItems();
 		
 		setTimeout(this.refreshTwitter.bind(this), this.update_interval);
 	},
@@ -89,6 +90,10 @@ var FluidTwitter = Class.create({
 
 		}
 	},	
+	
+	dockMenuItems: function() {
+		window.fluid.addDockMenuItem("Settings", function() { window.location.href = '/account/settings' })
+	},
 	
 	refreshTwitter: function() {
 	  // don't refresh if i'm scrolling
