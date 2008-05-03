@@ -18,6 +18,9 @@ var FluidTwitter = Class.create({
 	trimUI: function() {
 	  // hide some unneccessary parts of the UI
 	  $('side', 'footer', 'navigation').invoke('hide');
+
+    // hide some more by overlaying the content
+    $('content').setStyle({ position: 'absolute', top: '-20px', left: '0' });
 	  
 	  // alter divs to stretch with the viewport
 	  $('container', 'content').invoke('setStyle', {width: '100%'});
