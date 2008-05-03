@@ -70,6 +70,22 @@ var FluidTwitter = Class.create({
 			$('timeline').insert({ before: link } );
 	
 			fluid.setDockBadge((unread.size() || "").toString());
+
+			var from = unread.last().down('strong').down('a').getAttribute('title');
+			var tweet = unread.last().down('span').innerHTML.strip().stripTags();
+
+			if (unread.size() > 1) {
+				tweet += "\n("+ (unread.size()-1) +" more tweets)"
+			}
+			
+			fluid.showGrowlNotification({
+				title: from,
+				description: tweet,
+				priority: 3,
+				sticky: false,
+				onclick: window.fluid.activate
+			});
+
 		}
 	},	
 	
