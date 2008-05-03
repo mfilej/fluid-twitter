@@ -37,3 +37,5 @@ Caveats
 TODO
 ===============
 * Have Fluid Twitter to a JSON request to see if your friends timeline has been updated before reloading the window. This will require a way to persist username (and possibly password).
+* Append last read tweet id to Recent/Replies/Archive/Everyone links so that
+read tweets will persist when navigating
